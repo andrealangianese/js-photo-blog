@@ -15,10 +15,13 @@ header {
 
 h1 {
     font-size: 85px;
+    font-family: "Edu Tas Beginner", sans-serif;
+
 }
 
 main {
     background-image: url(./img/cork.png);
+    padding-top: 40px;
 }
 
 #container {
@@ -61,4 +64,21 @@ main {
     MARGIN-LEFT: 20px;
     margin-bottom: 8px;
 
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .card {
+        flex-basis: 48%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .card {
+       flex-basis: 100%;
+    }
+h1 {
+    font-size: 60px;
+}
 }
