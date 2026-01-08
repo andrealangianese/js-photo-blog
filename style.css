@@ -19,7 +19,6 @@ h1 {
 
 main {
     background-image: url(./img/cork.png);
-    height: 100vh;
 }
 
 #container {
@@ -29,8 +28,37 @@ main {
     margin: 0 auto;
 }
 
+.puntorosso {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .card {
     border: solid 2px black;
     margin: 10px auto;
     flex-basis: 30%;
+    background-color: white;
+    position: relative;
+}
+
+.card img {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.card h3 {
+    font-family: "Edu Tas Beginner", sans-serif;
+    font-size: 20px;
+    MARGIN-LEFT: 20px;
+    padding: 2px 0;
+}
+
+.card p {
+    font-family: "Sometype Mono", monospace;
+    font-size: 20px;
+    MARGIN-LEFT: 20px;
+    margin-bottom: 8px;
+
 }
