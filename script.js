@@ -2,6 +2,12 @@
 
 const cont = document.getElementById("container");
 
+//overlay da salvare
+
+const overlay = document.getElementById("overlay");
+const overlayImg = document.getElementById("overlay-img");
+const closeBtn = document.getElementById("close-btn");
+
 //creazione endpoint dell' api
 
 const endpoint = "https://lanciweb.github.io/demo/api/pictures/";
@@ -50,4 +56,8 @@ axios.get(endpoint)
 
         });
         
-    })
+    });
+
+    // overlay
+
+    const
