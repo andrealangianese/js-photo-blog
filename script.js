@@ -24,14 +24,14 @@ axios.get(endpoint)
         //creazione della variabile di accumulo FUORI DAL CICLO da riempire dopo
 
         let elementOutput = ""
-        
+
         // cicliamo l'array per estrapolare le info
 
         pics.forEach(element => {
-            
+
             //destrutturiamo l'oggetto
-            
-            const {title, date, url} = element;
+
+            const { title, date, url } = element;
 
             //stessa roba scritta in precedenza 
             // const title = element.title;
@@ -42,22 +42,38 @@ axios.get(endpoint)
 
             elementOutput += `
             <div class="card">
-                <img src="${url}" alt="${title}">
+                <img class="photo" src="${url}" alt="${title}">
                 <img class="puntorosso" src="./img/pin.svg" alt="">
                 <h3>${title}</h3>
                 <p> ${date}</p>
             </div>`;
-
-            //console.log(elementOutput);
-            
-            // inseriamo il contenuto in pagina
-
-            cont.innerHTML = elementOutput;
-
         });
-        
+
+        //console.log(elementOutput);
+
+        // inseriamo il contenuto in pagina
+
+        cont.innerHTML = elementOutput;
+
+        //seleziono .photo che ho aggiunto precedentemente
+        const photos = document.querySelectorAll(".photo");
+
+        //ciclo nuovamente, al click sulla foto la apro 
+        photos.forEach(photo => {
+            photo.addEventListener("click", function () {
+                //indico che al click la foto in overlay è uguale alla foto cliccata
+                overlayImg.src = photo.src;
+                //rimuovo display= nome e metto display: block
+                overlay.classList.remove("hidden");
+
+            });
+        });
+
+
     });
 
-    // overlay
-
-    const
+//chiusura della foto cliccando sul tasco close 
+closeBtn.addEventListener("click", function () {
+    // aggiungo classe hidden che è uguale a display=none
+    overlay.classList.add("hidden");
+});
